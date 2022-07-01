@@ -29,7 +29,7 @@ class SpindlerBattery(Battery):
 
     def needs_service(self):
         return self.__current_date > self.__last_service_date.replace(
-            year=self.__last_service_date.year + 4)
+            year=self.__last_service_date.year + 3)
 
 
 class NubbinBattery(Battery):

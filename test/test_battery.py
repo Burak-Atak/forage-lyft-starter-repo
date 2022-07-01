@@ -23,6 +23,8 @@ class TestSpindlerBattery(unittest.TestCase):
         self.assertTrue(battery.needs_service())
         battery.last_service_date = datetime.now() + timedelta(days=367)
         self.assertFalse(battery.needs_service())
+        battery.last_service_date = datetime.now() - timedelta(days=1097)
+        self.assertTrue(battery.needs_service())
 
 
 class TestNubbinBattery(unittest.TestCase):
